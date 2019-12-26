@@ -4,6 +4,8 @@ import VueRouter from 'vue-router'
 import firebase from 'firebase'
 import firebaseui from 'firebaseui';
 import router from './router'
+import * as VueGoogleMaps from 'vue2-google-maps'
+
 
 Vue.use(VueRouter)
 
@@ -25,7 +27,7 @@ firebase.analytics()
 new Vue ({
   router,
   created () {
-    firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig)
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.$router.push('/success')
