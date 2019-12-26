@@ -1,29 +1,39 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
-import store from './store'
+import VueRouter from 'vue-router'
 import firebase from 'firebase'
+import firebaseui from 'firebaseui';
+import router from './router'
 
+Vue.use(VueRouter)
 
-<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+var firebaseConfig = {
+  apiKey: 'AIzaSyBdO5KoqEhDtUGG1n8OrXVJP1N5cRVOPho',
+  authDomain: 'oaxcaosor.firebaseapp.com',
+  databaseURL: 'https://oaxcaosor.firebaseio.com',
+  projectId: 'oaxcaosor',
+  storageBucket: 'oaxcaosor.appspot.com',
+  messagingSenderId: '354344247448',
+  appId: '1:354344247448:web:c7010a4221a0825d39f0ed',
+  measurementId: 'G-4CLFQ7K2X0'
+}
 
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig)
+firebase.analytics()
 
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyBdO5KoqEhDtUGG1n8OrXVJP1N5cRVOPho",
-    authDomain: "oaxcaosor.firebaseapp.com",
-    databaseURL: "https://oaxcaosor.firebaseio.com",
-    projectId: "oaxcaosor",
-    storageBucket: "oaxcaosor.appspot.com",
-    messagingSenderId: "354344247448",
-    appId: "1:354344247448:web:c7010a4221a0825d39f0ed",
-    measurementId: "G-4CLFQ7K2X0"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
+new Vue ({
+  router,
+  created () {
+    firebase.initializeApp(firebaseConfig);
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.$router.push('/success')
+      } else {
+        this.$router.push('/auth')
+      }
+     })
+    },
+  el: '#app',
+  render: h => h(App)
+});
