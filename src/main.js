@@ -2,10 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import firebase from 'firebase'
-import firebaseui from 'firebaseui';
+// import firebaseui from 'firebaseui'
 import router from './router'
-import * as VueGoogleMaps from 'vue2-google-maps'
-
 
 Vue.use(VueRouter)
 
@@ -24,7 +22,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 firebase.analytics()
 
-new Vue ({
+new Vue({
   router,
   created () {
     firebase.initializeApp(firebaseConfig)
@@ -34,8 +32,7 @@ new Vue ({
       } else {
         this.$router.push('/auth')
       }
-     })
-    },
-  el: '#app',
+    })
+  },
   render: h => h(App)
-});
+}).$mount('#app')
