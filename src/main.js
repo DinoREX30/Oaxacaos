@@ -1,11 +1,6 @@
-import Vue from 'vue'
-import App from './App.vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue' // si
+import App from './App.vue' // si
 import firebase from 'firebase'
-// import firebaseui from 'firebaseui'
-import router from './router'
-
-Vue.use(VueRouter)
 
 var firebaseConfig = {
   apiKey: 'AIzaSyBdO5KoqEhDtUGG1n8OrXVJP1N5cRVOPho',
@@ -23,16 +18,6 @@ firebase.initializeApp(firebaseConfig)
 firebase.analytics()
 
 new Vue({
-  router,
-  created () {
-    firebase.initializeApp(firebaseConfig)
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.$router.push('/success')
-      } else {
-        this.$router.push('/auth')
-      }
-    })
-  },
+  el: '#app',
   render: h => h(App)
 }).$mount('#app')
