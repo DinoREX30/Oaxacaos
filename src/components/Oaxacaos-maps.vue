@@ -1,9 +1,9 @@
 <template>
-<html>
+    <html>
     <head>
-        <title>Oaxacaos</title>
+        <title>Oaxacaos - Mapas</title>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-        <link rel="stylesheet" href="OaxaCaos.css">
+        <link rel="stylesheet" href="mapas.css">
         <link rel="icon" href="C:/Users/lsbpl/Downloads/oaxacos.img/Fav-icon-OaxaCaos.PNG">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -23,24 +23,16 @@
                 </div>
             </nav>
             <div class="textos">
-                <h1>Bienvenido a <span>Oaxacaos</span></h1>
+                <h1>Muy pronto</h1>
                 <h2>Dile adiós al tráfico y al estrés</h2>
-                <div class="cuadro">
+                <!--<div class="cuadro">
                     <a href="C:/Users/lsbpl/OneDrive/Documentos/OaxaCaos/registro.html">registrate aquí</a>
-                </div>
+                </div>-->
             </div>
         </header>
     </body>
 </html>
 </template>
-
-<script>
-export default {
-methods: {
-  
-}
-}
-</script>
 
 <style>
 *{
@@ -55,7 +47,7 @@ body {
 }
 
 header {
-    background-image: url('C:/Users/lsbpl/Downloads/oaxacos.img/wallpaper4.jpg');
+    background-image: url('C:/Users/lsbpl/Downloads/oaxacos.img/background2.JPG');
     width: 100%;
     height: 625px;
     background-size: cover;
@@ -128,30 +120,26 @@ header .textos {
 .cuadro {
     height: 55px;
     width: 145px;
-    background: transparent;
+    background: linear-gradient(to bottom, rgb(255, 0, 0), rgb(105, 0, 0));
     align-items: center;
     margin-left: 625px;
-    border: 2px solid white;
-    border-radius: 18px;
+    border-radius: 17px;
     align-content: center;
-    transition: 0.5s;
 }
 
 .cuadro:hover {
     height: 55px;
     width: 145px;
-    background: rgb(255, 5, 5);
+    background: linear-gradient(to bottom, rgb(0, 198, 212), rgb(0, 90, 117));
     align-items: center;
     margin-left: 625px;
-    border: 2px solid white;
-    border-radius: 18px;
+    border-radius: 17px;
     align-content: center;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 790px) {
     body {
-        background-image: url('C:/Users/lsbpl/Downloads/oaxacos.img/wallpaper4.jpg');
-        width: 100%;
+        background: url('C:/Users/lsbpl/Downloads/oaxacos.img/background2.JPG');
     }
 
     header {

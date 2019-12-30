@@ -1,9 +1,9 @@
 <template>
-<html>
+    <html>
     <head>
-        <title>Oaxacaos</title>
+        <title>Oaxacaos - Registro</title>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-        <link rel="stylesheet" href="OaxaCaos.css">
+        <link rel="stylesheet" href="registro.css">
         <link rel="icon" href="C:/Users/lsbpl/Downloads/oaxacos.img/Fav-icon-OaxaCaos.PNG">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -23,24 +23,16 @@
                 </div>
             </nav>
             <div class="textos">
-                <h1>Bienvenido a <span>Oaxacaos</span></h1>
-                <h2>Dile adiós al tráfico y al estrés</h2>
-                <div class="cuadro">
-                    <a href="C:/Users/lsbpl/OneDrive/Documentos/OaxaCaos/registro.html">registrate aquí</a>
+                <h1>¿Ya tienes Cuenta?</h1>
+                <a href="C:/Users/lsbpl/OneDrive/Documentos/OaxaCaos/OC-Login.html">Inicia sesión</a>
+                <div class="cuenta">
+                    <a href="C:/Users/lsbpl/OneDrive/Documentos/OaxaCaos/OC-Cuenta.html">Crea una cuenta</a>
                 </div>
             </div>
         </header>
     </body>
 </html>
 </template>
-
-<script>
-export default {
-methods: {
-  
-}
-}
-</script>
 
 <style>
 *{
@@ -55,7 +47,7 @@ body {
 }
 
 header {
-    background-image: url('C:/Users/lsbpl/Downloads/oaxacos.img/wallpaper4.jpg');
+    background-image: url('C:/Users/lsbpl/Downloads/oaxacos.img/background1.JPG');
     width: 100%;
     height: 625px;
     background-size: cover;
@@ -112,60 +104,23 @@ header .textos {
 
 .textos h1 {
     font-size: 90px;
-}
-
-.textos h2 {
-    font-size: 40px;
-    margin-bottom: 80px;
+    margin-bottom: 45px;
 }
 
 .textos a {
+    text-decoration: none;
     color: white;
     font-size: 20px;
+    transition: 0.7s ease-out;
+}
+
+.textos a:hover {
     text-decoration: none;
+    color: white;
+    font-size: 24px;
 }
 
-.cuadro {
-    height: 55px;
-    width: 145px;
-    background: transparent;
-    align-items: center;
-    margin-left: 625px;
-    border: 2px solid white;
-    border-radius: 18px;
-    align-content: center;
-    transition: 0.5s;
-}
-
-.cuadro:hover {
-    height: 55px;
-    width: 145px;
-    background: rgb(255, 5, 5);
-    align-items: center;
-    margin-left: 625px;
-    border: 2px solid white;
-    border-radius: 18px;
-    align-content: center;
-}
-
-@media (max-width: 750px) {
-    body {
-        background-image: url('C:/Users/lsbpl/Downloads/oaxacos.img/wallpaper4.jpg');
-        width: 100%;
-    }
-
-    header {
-        background: transparent;
-    }
-
-    nav .logo {
-        height: 100%;
-        margin-left: 40px;
-    }
-
-    .cuadro {
-        margin-left: 325px;
-        margin-bottom: 50px;
-    }  
+.cuenta {
+    margin-top: 80px;
 }
 </style>
