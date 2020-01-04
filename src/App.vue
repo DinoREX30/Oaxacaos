@@ -1,33 +1,50 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<div id="app">
+<router-view>
+
+</router-view>
+
+<facebook-login class="button"
+      appId="579489356214610"
+      @login="onLogin"
+      @logout="onLogout"
+      @sdk-loaded="sdkLoaded">
+    </facebook-login>
+</div>
 </template>
+<script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+import facebookLogin from 'facebook-login-vuejs'
+
+export default {
+  name: 'app',
+  components: {
+    facebookLogin
+  },
+  methods:
+{
+  getUserData () {
+    this.FB.api('/me', 'GET', { fields: 'id,name,email' },
+      userInformation => {
+        this.personalID = userInformation.id
+        this.email = userInformation.email
+        this.name = userInformation.name
+      }
+    )
+  },
+  sdkLoaded (payload) {
+    this.isConnected = payload.isConnected
+    this.FB = payload.FB
+    if (this.isConnected) this.getUserData()
+  },
+  onLogin () {
+    this.isConnected = true
+    this.getUserData()
+  },
+  onLogout () {
+    this.isConnected = false
+  }
+}
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
-
+</script>
