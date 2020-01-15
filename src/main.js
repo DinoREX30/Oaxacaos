@@ -1,6 +1,15 @@
 import Vue from 'vue' // si
 import App from './App.vue' // si
 import firebase from 'firebase'
+import router from '../src/router/index'
+import store from '../src/store/index'
+import * as VueGoogleMaps from 'vue2-google-maps'
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyCvUrosrr4ZQtoG4oX0pGpkgTQhwhXhw-g'
+  }
+})
 
 var firebaseConfig = {
   apiKey: 'AIzaSyBdO5KoqEhDtUGG1n8OrXVJP1N5cRVOPho',
@@ -16,6 +25,8 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig)
 firebase.analytics()
+
+Vue.config.productionTip = false
 
 new Vue({
   el: '#app',

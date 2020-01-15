@@ -1,8 +1,5 @@
 <template>
 <div id="app">
-<router-view>
-
-</router-view>
 
 <facebook-login class="button"
       appId="579489356214610"
@@ -10,16 +7,19 @@
       @logout="onLogout"
       @sdk-loaded="sdkLoaded">
     </facebook-login>
+    <Map/>
 </div>
 </template>
 <script>
 
 import facebookLogin from 'facebook-login-vuejs'
+import Map from './components/maps.vue'
 
 export default {
   name: 'app',
   components: {
-    facebookLogin
+    facebookLogin,
+    Map
   },
   methods:
 {
