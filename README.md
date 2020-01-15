@@ -1,28 +1,3 @@
-# oaxacaos
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
 # OaxaCaos
 
 OaxaCaos es una herramienta para informar sobre el tráfico, bloqueos y otras situaciones para buscar rutas menos congestionadas para así llegar con rapidez a tu destino.
@@ -53,8 +28,22 @@ npm install vue2-google-maps
 ```
 npm i facebook-login-vuejs
 ```
+### Para correrlo
+```
+npm run serve
+```
+### Compiles and minifies for production
+```
+npm run build
+```
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Construido con 🛠️
 
@@ -69,5 +58,5 @@ _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios
 
 * **Luciano Sánchez** - *Fronted de la página* - [Pleyone](https://github.com/Pleyone)
 * **Raúl Baltazar** - *Trabajo en mapa* - [DinoREX30](https://github.com/DinoREX30)
-* **Luciano Sánchez** - *Fronted de la página* - [cahhr](https://github.com/cahhr)
+* **Cinthya Hernández** - *Trabajo en el mapa y base de datos* - [cahhr](https://github.com/cahhr)
 
