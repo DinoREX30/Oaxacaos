@@ -48,6 +48,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## Construido con 🛠️
 
 * [ Vue](https://vuejs.org/) - El framework web usado
+* [Firebase](https://firebase.google.com/products/hosting/?hl=es-419) - Herramienta para la base de datos
+
 
 
 ## Autores ✒️
