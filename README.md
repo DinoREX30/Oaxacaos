@@ -47,8 +47,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
 * [ Vue](https://vuejs.org/) - El framework web usado
 
 
