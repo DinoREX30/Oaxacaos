@@ -22,6 +22,15 @@
             <div class="login-box">
                 <img  class="avatar" src="C:/Users/lsbpl/Downloads/img/contactos.JPG" alt="">
                 <h2>Crea tu usuario</h2>
+                <div id="app">
+
+                    <facebook-login class="button"
+                          appId="579489356214610"
+                          @login="onLogin"
+                          @logout="onLogout"
+                          @sdk-loaded="sdkLoaded">
+                        </facebook-login>
+                    </div>
                 <form>
                     <label for="username">Nombre completo</label>
                     <input type="text" placeholder="Escribe tu nombre">
@@ -41,4 +50,42 @@
             </div>
         </main>
     </body>
+    <script>
+
+        import facebookLogin from 'facebook-login-vuejs'
+        
+        export default {
+          name: 'app',
+          components: {
+            facebookLogin,
+            Map
+          },
+          methods:
+        {
+          getUserData () {
+            this.FB.api('/me', 'GET', { fields: 'id,name,email' },
+              userInformation => {
+                this.personalID = userInformation.id
+                this.email = userInformation.email
+                this.name = userInformation.name
+              }
+            )
+          },
+          sdkLoaded (payload) {
+            this.isConnected = payload.isConnected
+            this.FB = payload.FB
+            if (this.isConnected) this.getUserData()
+          },
+          onLogin () {
+            this.isConnected = true
+            this.getUserData()
+          },
+          onLogout () {
+            this.isConnected = false
+          }
+        }
+        }
+        
+        </script>
+        
 </html>

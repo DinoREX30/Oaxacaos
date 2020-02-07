@@ -3,8 +3,9 @@
     <GmapMap v-bind:center="{lat: currentLocation.lat, lng: currentLocation.lng}"
           :zoom="17"
           map-type-id="terrain"
-      class="google-map" 
-      @click="selectLocation"     
+  class= "google-map" 
+  @click= "selectLocation" 
+  on:click ="geolocation()"    
           style="height: 600px">
         <GmapMarker v-bind:key="index" v-for="(m, index) in
         markers" v-bind:position="m.position"
